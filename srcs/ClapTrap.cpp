@@ -6,20 +6,26 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:57:20 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/25 18:30:52 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/29 15:54:20 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-static int i;
+static int i = 1;
 
 ClapTrap::ClapTrap() {
 	std::cout << "Default Constructor called" << std::endl;
-	_name = "Player : " + i++;
+	std::stringstream	sstm;
+	sstm << "Player : " << i++ << " ";
+	_name = sstm.str();
 	_hp = 10;
 	_ep = 10;
-	_attackDamage = 0;
+	_attackDamage = 2;
+}
+
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int attackDamage) : _name(name), _hp(hp), _ep(ep), _attackDamage(attackDamage) {
+	std::cout << "Copy Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
@@ -43,35 +49,57 @@ ClapTrap::~ClapTrap() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+/* Behevoir */
+
+void ClapTrap::attack(const std::string &target) {
+	if (this->_ep - DECREMENT_EP < 0)
+	{
+		std::cout << "Not enough energie point!" << std::endl;
+		return ;
+	}
+	std::cout <<"ClapTrap " << this->_name << " attack " << std::endl;
+	this->_ep -= DECREMENT_EP;
+}
+
+void ClapTrap::takeDamage(unsigned int amount) {
+	if (this->_ep - DECREMENT_EP < 0)
+	{
+		std::cout << "Not enough energie point!" << std::endl;
+		return ;
+	}
+	std::cout << "causing " << amount << " points of damage to " << this->_name << std::endl;
+	this->_hp -= amount;
+}
+
+void ClapTrap::beRepaired(unsigned int amount) {
+	if (this->_ep - DECREMENT_EP < 0)
+	{
+		std::cout << "Not enough energie point!" << std::endl;
+		return ;
+	}
+	std::cout <<"ClapTrap " << this->_name << " repair " << amount << std::endl;
+	this->_hp += amount;
+	this->_ep -= DECREMENT_EP;
+}
+
+/* Getter */
+
 std::string	ClapTrap::getName() const {
-	std::cout << "getName called" << std::endl;
+	//std::cout << "getName called" << std::endl;
 	return (this->_name);
 }
 
-int			ClapTrap::getHp() const {
-	std::cout << "getHp called" << std::endl;
+int	ClapTrap::getHp() const {
+	//std::cout << "getHp called" << std::endl;
 	return (this->_hp);
 }
 
-int			ClapTrap::getEp() const {
-	std::cout << "getEp called" << std::endl;
+int	ClapTrap::getEp() const {
+	//std::cout << "getEp called" << std::endl;
 	return (this->_ep);
 }
 
-int			ClapTrap::getAttackDamage() const {
-	std::cout << "getAttackDamage called" << std::endl;
+int	ClapTrap::getAttackDamage() const {
+	//std::cout << "getAttackDamage called" << std::endl;
 	return (this->_attackDamage);
-}
-
-void attack(const std::string &target) {
-	std::cout << "attack called" << std::endl;
-	target.takeDamage(this->_attackDamage);
-}
-
-void takeDamage(unsigned int amount) {
-	std::cout << "takeDamage called" << std::endl;
-}
-
-void beRepaired(unsigned int amount) {
-	std::cout << "beRepaired called" << std::endl;
 }

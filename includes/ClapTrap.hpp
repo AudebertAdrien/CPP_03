@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:58:39 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/25 18:34:48 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/29 15:53:29 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+#include <sstream>
+
+#define DECREMENT_EP 6
 
 class	ClapTrap
 {
@@ -25,6 +28,7 @@ class	ClapTrap
 
 	public:
 		ClapTrap();
+		ClapTrap(std::string name, int hp, int ep, int attackDamage);
 		ClapTrap(const ClapTrap &src);
 		ClapTrap& operator=(const ClapTrap &src);
 		~ClapTrap();
@@ -34,7 +38,7 @@ class	ClapTrap
 		int			getEp() const;
 		int			getAttackDamage() const;
 
-		void attack(const std::string& target);
+		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
