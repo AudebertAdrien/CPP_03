@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 16:04:03 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:17:32 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ FragTrap::~FragTrap() {
 	std::cout << "FragTrap Destructor called" << std::endl;
 }
 
+void FragTrap::attack(const std::string &target) {
+	if (this->_ep - DECREMENT_EP < 0)
+	{
+		std::cout << "Not enough energie point!" << std::endl;
+		return ;
+	}
+	std::cout <<"FragTrap " << this->_name << " attack " << std::endl;
+	this->_ep -= DECREMENT_EP;
+}
 void	FragTrap::highFivesGuys() {
 	std::cout << "FragTrap is now in high Fives Guys!" << std::endl;
 }

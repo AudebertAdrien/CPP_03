@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:58:39 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 15:31:26 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:18:14 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <sstream>
 
-#define DECREMENT_EP 6
+#define DECREMENT_EP 1
 
 class	ClapTrap
 {
