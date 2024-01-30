@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:17:34 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 15:46:05 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/29 17:41:16 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ScavTrap : public ClapTrap {
 
 		void	attack(const std::string &target);
 		void	guardGate();	
+	private:
 };
 
 #endif

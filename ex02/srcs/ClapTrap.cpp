@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:57:20 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 15:22:12 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/29 17:40:46 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 static int i = 1;
 
 ClapTrap::ClapTrap() {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "ClapTrap Default Constructor called" << std::endl;
 	std::stringstream	sstm;
-	sstm << "Player : " << i++ << " ";
+	sstm << "ClapTrap n° : " << i++ << " ";
 	_name = sstm.str();
-	_hp = 10;
-	_ep = 10;
-	_attackDamage = 2;
+	_hp = 100;
+	_ep = 50;
+	_attackDamage = 20;
 }
 
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int attackDamage) : _name(name), _hp(hp), _ep(ep), _attackDamage(attackDamage) {
-	std::cout << "Constructor with params called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
 		*this = src;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap &src) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	if (this != &src)
 	{
 		this->_name = src.getName();
@@ -46,7 +46,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &src) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 /* Behevoir */
