@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/29 17:42:12 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:02:33 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 	std::stringstream	sstm;
 	sstm << "ScavTrap n° : " << i++ << " ";
+	this->ClapTrap::_name = sstm.str(); 
+	this->ClapTrap::_hp = 100; 
+	this->ClapTrap::_ep = 50;
+	this->ClapTrap::_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name, int hp, int ep, int attackDamage)  : ClapTrap(name, hp, ep, attackDamage) {

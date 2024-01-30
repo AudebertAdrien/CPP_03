@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/29 18:24:24 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:04:03 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ FragTrap::FragTrap() : ClapTrap() {
 	std::cout << "FragTrap Default Constructor called" << std::endl;
 	std::stringstream	sstm;
 	sstm << "FragTrap n° : " << i++ << " ";
+	this->ClapTrap::_name = sstm.str(); 
+	this->ClapTrap::_hp = 100; 
+	this->ClapTrap::_ep = 100;
+	this->ClapTrap::_attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name, int hp, int ep, int attackDamage)  : ClapTrap(name, hp, ep, attackDamage) {

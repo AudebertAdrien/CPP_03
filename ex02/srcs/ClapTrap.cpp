@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:57:20 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/29 17:40:46 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:05:41 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int attackDamage) : _name(name), _hp(hp), _ep(ep), _attackDamage(attackDamage) {
-	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor with params called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {

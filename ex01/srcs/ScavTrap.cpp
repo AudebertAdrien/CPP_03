@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 15:57:08 by motoko           ###   ########.fr       */
+/*   Updated: 2024/01/30 16:08:59 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap &src) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap Destructor called" << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target) {
+	if (this->_ep - DECREMENT_EP < 0)
+	{
+		std::cout << "Not enough energie point!" << std::endl;
+		return ;
+	}
+	std::cout <<"ScavTrap " << this->_name << " attack " << std::endl;
+	this->_ep -= DECREMENT_EP;
 }
 
 void	ScavTrap::guardGate() {
