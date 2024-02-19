@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 16:08:59 by motoko           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:34:46 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap() {
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap &src) {
 	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
+	if (this != &src) {}
 	return (*this);
 }
 
@@ -48,7 +49,7 @@ void ScavTrap::attack(const std::string &target) {
 		std::cout << "Not enough energie point!" << std::endl;
 		return ;
 	}
-	std::cout <<"ScavTrap " << this->_name << " attack " << std::endl;
+	std::cout <<"ScavTrap " << this->_name << " attack " << target << std::endl;
 	this->_ep -= DECREMENT_EP;
 }
 

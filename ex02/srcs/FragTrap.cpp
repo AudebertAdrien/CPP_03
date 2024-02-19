@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:16:43 by motoko            #+#    #+#             */
-/*   Updated: 2024/01/30 16:17:32 by motoko           ###   ########.fr       */
+/*   Updated: 2024/02/19 15:37:47 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap() {
 
 FragTrap&	FragTrap::operator=(const FragTrap &src) {
 	std::cout << "FragTrap Copy assignment operator called" << std::endl;
+	if (this != &src) {}
 	return (*this);
 }
 
@@ -48,7 +49,7 @@ void FragTrap::attack(const std::string &target) {
 		std::cout << "Not enough energie point!" << std::endl;
 		return ;
 	}
-	std::cout <<"FragTrap " << this->_name << " attack " << std::endl;
+	std::cout <<"FragTrap " << this->_name << " attack " << target << std::endl;
 	this->_ep -= DECREMENT_EP;
 }
 void	FragTrap::highFivesGuys() {

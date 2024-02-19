@@ -6,7 +6,7 @@
 #    By: motoko <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 14:26:47 by motoko            #+#    #+#              #
-#    Updated: 2024/01/29 18:25:52 by motoko           ###   ########.fr        #
+#    Updated: 2024/02/19 15:35:58 by motoko           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS			:= main.cpp				\
 				   FragTrap.cpp
 
 CC				:= g++
-CFLAGS`			:= -g -Wall -Werror -Wextra 
+CFLAGS			:= -ggdb3 -Wall -Werror -Wextra 
 
 ifdef STD
 CFLAGS			+= -std=$(STD)

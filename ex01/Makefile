@@ -6,7 +6,7 @@
 #    By: motoko <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 14:26:47 by motoko            #+#    #+#              #
-#    Updated: 2024/01/29 16:19:12 by motoko           ###   ########.fr        #
+#    Updated: 2024/02/19 15:02:58 by motoko           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS			:= main.cpp				\
 				   ScavTrap.cpp
 
 CC				:= g++
-CFLAGS`			:= -g -Wall -Werror -Wextra 
+CFLAGS			:= -g -Wall -Werror -Wextra 
 
 ifdef STD
 CFLAGS			+= -std=$(STD)
